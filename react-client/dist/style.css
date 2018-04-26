@@ -405,3 +405,12 @@ body {
 .cards-container section img {
     width: 100%;
 }
+
+@media (min-height: 320px) {
+    .footer {
+        /* Increased specificity for SO snippet priority */
+        position: absolute !important;
+        bottom: 0;
+        width: 100%;
+    }
+}

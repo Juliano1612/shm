@@ -15,15 +15,15 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Arms></Arms>
-          <NavBar></NavBar>
+          <Arms/>
+          <NavBar/>
             <Switch>
                 <Route name="home" exact path="/" component={HomePage} />
                 <Route name="about" exact path="/about" component={About} />
                 <Route name="timeline" exact path="/timeline" component={Timeline} />
                 <Route name="local" exact path="/comochegar" component={Local} />
             </Switch>
-          <Footer></Footer>
+          <Footer/>
         </div>
       </Router>
     )
