@@ -5,15 +5,9 @@ class NavBar extends Component {
   render() {
     return (
         <div className="ui secondary pointing menu">
-            <a className="item active">
-                <Link to="/">Home</Link>
-            </a>
-            <a className="item">
-                <Link to="/about">About</Link>
-            </a>
-            <a className="item">
-                <Link to="/timeline">Timeline</Link>
-            </a>
+            <Link to="/" className="item active"> Home </Link>
+            <Link to="/about" className="item">About</Link>
+            <Link to="/timeline" className="item">Timeline</Link>
         </div>
     )
   }
