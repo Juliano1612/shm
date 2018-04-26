@@ -7,6 +7,7 @@ import About from './../Pages/About';
 import Timeline from './../Pages/Timeline';
 import Local from './../Pages/Local';
 import NavBar from './HeaderComponent/NavBar';
+import Arms from './HeaderComponent/Arms';
 import Footer from './FooterComponent/Footer';
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
     return (
       <Router>
         <div>
+          <Arms></Arms>
           <NavBar></NavBar>
             <Switch>
                 <Route name="home" exact path="/" component={HomePage} />

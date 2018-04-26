@@ -6,7 +6,7 @@ class Timeline extends Component {
             // <div className="">
 
             // </div>
-< div className = "ui container" >
+            < div className = "ui container" >
                 <div className="pres-timeline" id="this-timeline">
                     <div className="periods-container">
                         <section className="period-single" period="period1">
