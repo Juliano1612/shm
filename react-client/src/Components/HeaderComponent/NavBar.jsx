@@ -11,6 +11,9 @@ class NavBar extends Component {
             <a className="item">
                 <Link to="/about">About</Link>
             </a>
+            <a className="item">
+                <Link to="/timeline">Timeline</Link>
+            </a>
         </div>
     )
   }

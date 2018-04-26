@@ -4,7 +4,7 @@ class Footer extends Component {
   render() {
     return (
       <footer className="ui basic segment ">
-        <div className="ui center aligned container">
+        <div className="ui center aligned container ">
           Footer component
         </div>
       </footer>

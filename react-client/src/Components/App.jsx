@@ -4,6 +4,7 @@ import { Switch } from 'react-router-dom';
 import { browserHistory } from 'react-router';
 import HomePage from './../Pages/HomePage';
 import About from './../Pages/About';
+import Timeline from './../Pages/Timeline';
 import NavBar from './HeaderComponent/NavBar';
 import Footer from './FooterComponent/Footer';
 
@@ -16,6 +17,7 @@ class App extends Component {
             <Switch>
                 <Route name="home" exact path="/" component={HomePage} />
                 <Route name="about" exact path="/about" component={About} />
+                <Route name="timeline" exact path="/timeline" component={Timeline} />
             </Switch>
           <Footer></Footer>
         </div>
