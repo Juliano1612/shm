@@ -406,11 +406,20 @@ body {
     width: 100%;
 }
 
-@media (min-height: 320px) {
-    .footer {
-        /* Increased specificity for SO snippet priority */
-        position: absolute !important;
-        bottom: 0;
-        width: 100%;
-    }
+.marginBottom {
+    margin-bottom: 20px;
+}
+
+.dragdrop {
+    margin: auto;
+    width: 50%;
+    height: auto;
+    outline-style: dashed;
+    padding: 5px;
+    /* color: rgb(91, 189, 219); */
+    color: black;
+}
+
+.padZero {
+    padding: 0px;
 }
