@@ -19,32 +19,30 @@ class Feed extends Component {
     this.setState({files});
   }
 
-  uploadSuccess({data}) {
-    return {type: 'UPLOAD_DOCUMENT_SUCCESS', data};
-  }
+  // uploadSuccess({data}) {
+  //   return {type: 'UPLOAD_DOCUMENT_SUCCESS', data};
+  // }
 
-  uploadFail(error) {
-    return {type: 'UPLOAD_DOCUMENT_FAIL', error};
-  }
+  // uploadFail(error) {
+  //   return {type: 'UPLOAD_DOCUMENT_FAIL', error};
+  // }
 
-  uploadDocumentRequest({file, name}) {
-    let data = new FormData();
-    data.append('file', document);
-    data.append('name', name);
+  // uploadDocumentRequest({file, name}) {
+  //   let data = new FormData();
+  //   data.append('file', document);
+  //   data.append('name', name);
 
-    return (dispatch) => {
-      axios.post('/files', data)
-    };
-  }
+  //   return (dispatch) => {
+  //     axios.post('/files', data)
+  //   };
+  // }
 
   render() {
     return (
       <div className="ui container center aligned">
         <Dropzone
           className="dragdrop"
-          onDrop={this
-          .onDrop
-          .bind(this)}>
+          onDrop={this.onDrop.bind(this)}>
           <div className="ui two column grid middle aligned centered " id="iconUpload">
             <div className="two wide column">
               <span className="left">
@@ -58,21 +56,17 @@ class Feed extends Component {
           </div>
           <div>
             <ul className="padZero">
-              {this
-                .state
-                .files
-                .map(f => { < img width = "70%" height = "auto" src = {
-                    f.preview
-                  } > </img>
-                })
-}
+              {
+                this.state.files.map(f =>{<img width="70%" height="auto" src={f.preview}> </img>})
+                // this.state.files.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
+                }
             </ul>
           </div>
 
         </Dropzone>
 
     
-        <div className="ui four column grid">
+        {/* <div className="ui four column grid">
 
           <div class="ui card column ">
             <div class="image">
@@ -94,7 +88,7 @@ class Feed extends Component {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
 
       </div>
     )
