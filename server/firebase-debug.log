@@ -1,0 +1,94 @@
+[debug] [2018-06-24T17:54:21.942Z] ----------------------------------------------------------------------
+[debug] [2018-06-24T17:54:21.944Z] Command:       /Users/pauloapanucci/.nvm/versions/node/v10.1.0/bin/node /Users/pauloapanucci/.nvm/versions/node/v10.1.0/bin/firebase deploy
+[debug] [2018-06-24T17:54:21.944Z] CLI Version:   3.19.0
+[debug] [2018-06-24T17:54:21.944Z] Platform:      darwin
+[debug] [2018-06-24T17:54:21.944Z] Node Version:  v10.1.0
+[debug] [2018-06-24T17:54:21.944Z] Time:          Sun Jun 24 2018 14:54:21 GMT-0300 (-03)
+[debug] [2018-06-24T17:54:21.944Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-06-24T17:54:21.954Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-06-24T17:54:21.955Z] > authorizing via signed-in user
+[debug] [2018-06-24T17:54:21.956Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/casorio-2206  
+  
+ Sun Jun 24 2018 14:54:21 GMT-0300 (-03)
+[debug] [2018-06-24T17:54:22.801Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-24T17:54:22.802Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/casorio-2206/tokens  
+  
+ Sun Jun 24 2018 14:54:22 GMT-0300 (-03)
+[debug] [2018-06-24T17:54:23.599Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'casorio-2206'...
+[info] 
+[info] i  deploying functions
+[debug] [2018-06-24T17:54:26.193Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~5.12.1",
+    "firebase-functions": "^1.0.3"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-06-24T17:54:26.193Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/casorio-2206?view=CONSUMER_VIEW  
+  
+ Sun Jun 24 2018 14:54:26 GMT-0300 (-03)
+[debug] [2018-06-24T17:54:26.194Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/casorio-2206?view=CONSUMER_VIEW  
+  
+ Sun Jun 24 2018 14:54:26 GMT-0300 (-03)
+[debug] [2018-06-24T17:54:27.557Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-24T17:54:27.753Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2018-06-24T17:54:27.754Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/casorio-2206  
+  
+ Sun Jun 24 2018 14:54:27 GMT-0300 (-03)
+[debug] [2018-06-24T17:54:28.838Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-24T17:54:28.839Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/158210452531:getServerAppConfig  
+  
+ Sun Jun 24 2018 14:54:28 GMT-0300 (-03)
+[debug] [2018-06-24T17:54:29.547Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-06-24T17:54:29.548Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/casorio-2206/configs  
+  
+ Sun Jun 24 2018 14:54:29 GMT-0300 (-03)
+[debug] [2018-06-24T17:54:30.903Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (39.63 KB) for uploading
+[debug] [2018-06-24T17:54:31.067Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/casorio-2206/locations/us-central1/functions:generateUploadUrl  
+  
+ Sun Jun 24 2018 14:54:31 GMT-0300 (-03)
+[debug] [2018-06-24T17:55:02.449Z] <<< HTTP RESPONSE 503
+[debug] [2018-06-24T17:55:02.449Z] <<< HTTP RESPONSE BODY {
+  "error": {
+    "code": 503,
+    "message": "The service is currently unavailable.",
+    "status": "UNAVAILABLE"
+  }
+}
+
+[debug] [2018-06-24T17:55:02.451Z] TypeError: Cannot create property 'error' on string '{
+  "error": {
+    "code": 503,
+    "message": "The service is currently unavailable.",
+    "status": "UNAVAILABLE"
+  }
+}
+'
+    at module.exports (/Users/pauloapanucci/.nvm/versions/node/v10.1.0/lib/node_modules/firebase-tools/lib/responseToError.js:11:16)
+    at Request._callback (/Users/pauloapanucci/.nvm/versions/node/v10.1.0/lib/node_modules/firebase-tools/lib/api.js:47:25)
+    at Request.self.callback (/Users/pauloapanucci/.nvm/versions/node/v10.1.0/lib/node_modules/firebase-tools/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:182:13)
+    at Request.EventEmitter.emit (domain.js:442:20)
+    at Request.<anonymous> (/Users/pauloapanucci/.nvm/versions/node/v10.1.0/lib/node_modules/firebase-tools/node_modules/request/request.js:1157:10)
+    at Request.emit (events.js:182:13)
+    at Request.EventEmitter.emit (domain.js:442:20)
+    at IncomingMessage.<anonymous> (/Users/pauloapanucci/.nvm/versions/node/v10.1.0/lib/node_modules/firebase-tools/node_modules/request/request.js:1079:12)
+    at Object.onceWrapper (events.js:273:13)
+[error] 
+[error] Error: An unexpected error has occurred.
