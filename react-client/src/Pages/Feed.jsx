@@ -15,13 +15,13 @@ class Feed extends Component {
   }
 
   handleLikes(s, f){
-    console.log(f.currentTarget, s.state.files)
-    console.log("Likei", f.currentTarget.id)
+    // console.log(f.currentTarget, s.state.files)
+    // console.log("Likei", f.currentTarget.childNodes[2].childNodes[0])
     var updateImage = s.state.files.find(x => x.key == f.currentTarget.id)
-    // this.getState((files) => {  console.log(files)})
-    console.log(updateImage.likes)
+    // console.log(updateImage.likes)
     var newLikes = updateImage.likes + 1
-    // updateImage.likes = newLikes
+    updateImage.likes = newLikes
+    s.forceUpdate()
     database.ref('images/' + f.currentTarget.id).update({
         likes: newLikes
     });
@@ -109,35 +109,9 @@ class Feed extends Component {
         console.log('Error fetching data', e);
         return null
     });
-
-    // database.ref('images')
-    // .on('value',
-    // (snapshot) => {
-    //     // const key = snapshot.key;
-    //     // const val = snapshot.val();
-    //     var imgArray = this.snapshotToArray(snapshot)
-    //     // var res = []
-    //     this.setState({files: []})
-    //     for(var i = 0; i < imgArray.length; i++){
-    //       // console.log(imgArray[i])
-    //       var img = {
-    //         key: imgArray[i].key,
-    //         url: imgArray[i].url,
-    //         likes: imgArray[i].likes
-    //       }
-    //       this.setState(prevState => ({
-    //         files: [...prevState.files, img]
-    //       }))
-    //       // res.push(img)
-    //       // console.log(this.state.files)
-    //     }
-    //     // console.log(this.state.files)       
-    // })
   }
 
   render() {
-    // this.fileDownloadHandler();
-    // console.log(this.state.files)
     return (
       <div className="ui center aligned grid">
         <div className="ui row">
