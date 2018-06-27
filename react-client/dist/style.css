@@ -16,12 +16,21 @@
     float: right;
 } */
 
+/* @media(in-height: 320px){
+    .footer { 
+        position: absolute !important;
+        bottom: 0;
+        width: 100%;
+    }
+} */
 
-/* footer {
-    position: absolute;
-    height: 100px;
-    bottom: 0;
-    width: 100%;
+/* .container {
+    padding-bottom: 10px
+} */
+
+/* .footer {
+    
+    position: ;
 } */
 
 

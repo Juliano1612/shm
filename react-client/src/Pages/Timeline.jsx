@@ -262,9 +262,15 @@ class Timeline extends Component {
             // ## document load ##
             $(document).ready(function() {
                 var colorcode = {
-                    'period1': '#fec541',
-                    'period2': '#36d484',
-                    'period3': '#32ccf4'
+                    'period2011': '#0000ff',
+                    'period2012': '#6a00ff',
+                    'period2013': '#9400ff',
+                    'period2014': '#c300ff',
+                    'period2015': '#ef00ff',
+                    'period2016': '#ff00ff',
+                    'period2017': '#ff0080',
+                    'period2018': '#ff005e',
+                    'period2019': '#ff002a',
                 };
                 var timeline = new PRESTimeline($('#this-timeline'), colorcode);
             });
@@ -278,33 +284,50 @@ class Timeline extends Component {
             < div className = "ui container" >
                 <div className="pres-timeline" id="this-timeline">
                     <div className="periods-container">
-                        <section className="period-single" period="period1">
-                            <h4 className="year">181x-181x</h4>
-                            <h2 className="title">1 Lorem ipsum dolor sit amet, consectetur adipisicing.</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium
-                                doloremque, laboriosam officia facere eligendi quam reiciendis, rem explicabo
-                                dolores tenetur libero minus, facilis quibusdam. Consectetur amet beatae fuga,
-                                architecto magnam.</p>
+                        <section className="period-single" period="period2011">
+                            <h4 className="year">2011</h4>
+                            <h2 className="title">Ano de 2011</h2>
+                            <p>Texto Ano 2011</p>
                         </section>
-                        <section className="period-single" period="period2">
-                            <h4 className="year">182x-182x</h4>
-                            <h2 className="title">2 Lorem ipsum dolor sit amet, consectetur adipisicing.</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium
-                                doloremque, laboriosam officia facere eligendi quam reiciendis, rem explicabo
-                                dolores tenetur libero minus, facilis quibusdam. Consectetur amet beatae fuga,
-                                architecto magnam.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium
-                                doloremque, laboriosam officia facere eligendi quam reiciendis, rem explicabo
-                                dolores tenetur libero minus, facilis quibusdam. Consectetur amet beatae fuga,
-                                architecto magnam.</p>
+                        <section className="period-single" period="period2012">
+                            <h4 className="year">2012</h4>
+                            <h2 className="title">Ano de 2012</h2>
+                            <p>Texto Ano 2012</p>
                         </section>
-                        <section className="period-single" period="period3">
-                            <h4 className="year">183x-183x</h4>
-                            <h2 className="title">3 Lorem ipsum dolor sit amet, consectetur adipisicing.</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium
-                                doloremque, laboriosam officia facere eligendi quam reiciendis, rem explicabo
-                                dolores tenetur libero minus, facilis quibusdam. Consectetur amet beatae fuga,
-                                architecto magnam.</p>
+                        <section className="period-single" period="period2013">
+                            <h4 className="year">2013</h4>
+                            <h2 className="title">Ano de 2013</h2>
+                            <p>Texto Ano 2013</p>
+                        </section>
+                        <section className="period-single" period="period2014">
+                            <h4 className="year">2014</h4>
+                            <h2 className="title">Ano de 2014</h2>
+                            <p>Texto Ano 2014</p>
+                        </section>
+                        <section className="period-single" period="period2015">
+                            <h4 className="year">2015</h4>
+                            <h2 className="title">Ano de 2015</h2>
+                            <p>Texto Ano 2015</p>
+                        </section>
+                        <section className="period-single" period="period2016">
+                            <h4 className="year">2016</h4>
+                            <h2 className="title">Ano de 2016</h2>
+                            <p>Texto Ano 2016</p>
+                        </section>
+                        <section className="period-single" period="period2017">
+                            <h4 className="year">2017</h4>
+                            <h2 className="title">Ano de 2017</h2>
+                            <p>Texto Ano 2017</p>
+                        </section>
+                        <section className="period-single" period="period2018">
+                            <h4 className="year">2018</h4>
+                            <h2 className="title">Ano de 2018</h2>
+                            <p>Texto Ano 2018</p>
+                        </section>
+                        <section className="period-single" period="period2019">
+                            <h4 className="year">2019</h4>
+                            <h2 className="title">Ano de 2019</h2>
+                            <p>Texto Ano 2019</p>
                         </section>
                         <div className="btn-back"></div>
                         <div className="btn-next"></div>
@@ -336,79 +359,120 @@ class Timeline extends Component {
                     </div>
 
                     <div className="cards-container">
-                        <section className="card-single active" period="period1">
-                            <h4 className="year">1816</h4>
-                            <h2 className="title">Lorem ipsum dolor sit amet.</h2>
+                        <section className="card-single active" period="period2011">
+                            <h4 className="year">05/12/2011</h4>
+                            <h2 className="title">E a história começa por aqui...</h2>
                             <div className="content">
                                 <img
-                                    src="https://ununsplash.imgix.net/photo-1421284621639-884f4129b61d?fit=crop&fm=jpg&h=700&q=75&w=1050"
-                                    alt=""/>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore vitae sint
-                                    dolore, officia esse! A recusandae nemo illum rem eos iusto repellendus,
-                                    voluptatibus tempora nulla voluptatem officia inventore ea modi.</p>
+                                    src={require('../../dist/Assets/timeline_images/20111205.jpg')}
+                                    />
+                                <p>Lá pro meio do ano de 2011 a senhorita da foto adiciona esse benino no MSN e começa a perguntar se ele fazia ingles na CNA... 
+                                    Depois disso, começaram a se encontrar...
+                                    07 dias depois dessa foto começam a namorar!
+                                </p>
                             </div>
                         </section>
-                        <section className="card-single" period="period1">
-                            <h4 className="year">1816</h4>
-                            <h2 className="title">Lorem ipsum dolor sit amet.</h2>
+                        <section className="card-single active" period="period2011">
+                            <h4 className="year">23/12/2011</h4>
+                            <h2 className="title">Já que começou a namorar no fim do ano, tem festa!</h2>
                             <div className="content">
                                 <img
-                                    src="https://ununsplash.imgix.net/photo-1421284621639-884f4129b61d?fit=crop&fm=jpg&h=700&q=75&w=1050"
+                                    src={require('../../dist/Assets/timeline_images/20111223.jpg')}
                                     alt=""/>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore vitae sint
-                                    dolore, officia esse! A recusandae nemo illum rem eos iusto repellendus,
-                                    voluptatibus tempora nulla voluptatem officia inventore ea modi.</p>
+                                <p>E vem o primeiro natal juntos</p>
                             </div>
                         </section>
-                        <section className="card-single" period="period2">
-                            <h4 className="year">1816</h4>
-                            <h2 className="title">Lorem ipsum dolor sit amet.</h2>
-                            <div className="content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A tempora
-                                    blanditiis ut voluptas nisi labore quos iste totam obcaecati modi rerum iusto,
-                                    voluptate odio commodi ratione amet illum dicta accusamus, ipsum ea vero neque
-                                    enim, recusandae dignissimos? Quae ea aspernatur dolor atque, ipsum repellendus.
-                                    Repudiandae culpa magnam, doloribus exercitationem illo impedit quasi officia,
-                                    veniam vero molestiae sunt dolorem, excepturi ullam dicta sed amet provident ut
-                                    soluta pariatur magni! Fugiat eveniet suscipit praesentium culpa aperiam ab
-                                    nulla, exercitationem atque quod, labore, qui quaerat nihil nam laborum aliquam!
-                                    Nesciunt dignissimos eaque impedit ex, architecto minima ad, temporibus rem
-                                    possimus consequatur doloremque, fuga?</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore vitae sint
-                                    dolore, officia esse! A recusandae nemo illum rem eos iusto repellendus,
-                                    voluptatibus tempora nulla voluptatem officia inventore ea modi.</p>
-                            </div>
-                        </section>
-                        <section className="card-single" period="period1">
-                            <h4 className="year">1816</h4>
-                            <h2 className="title">Lorem ipsum dolor sit amet.</h2>
-                            <div className="content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore vitae sint
-                                    dolore, officia esse! A recusandae nemo illum rem eos iusto repellendus,
-                                    voluptatibus tempora nulla voluptatem officia inventore ea modi.</p>
-                            </div>
-                        </section>
-                        <section className="card-single" period="period3">
-                            <h4 className="year">1816</h4>
-                            <h2 className="title">Lorem ipsum dolor sit amet.</h2>
+                        <section className="card-single active" period="period2012">
+                            <h4 className="year">13/04/2012</h4>
+                            <h2 className="title">Já são família</h2>
                             <div className="content">
                                 <img
-                                    src="https://ununsplash.imgix.net/photo-1421284621639-884f4129b61d?fit=crop&fm=jpg&h=700&q=75&w=1050"
+                                    src={require('../../dist/Assets/timeline_images/20120413.jpg')}
                                     alt=""/>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore vitae sint
-                                    dolore, officia esse! A recusandae nemo illum rem eos iusto repellendus,
-                                    voluptatibus tempora nulla voluptatem officia inventore ea modi.</p>
+                                <p>Alguns meses já passaram, e já não tem como um não ser membro oficial da família do outro</p>
                             </div>
                         </section>
-                        <section className = "card-single" period = "period3" > 
-                            <h4 className="year">1816</h4> 
-                            <h2 className = "title" > Lorem ipsum dolor sit amet. </h2>
+                        <section className="card-single active" period="period2012">
+                            <h4 className="year">17/08/2012</h4>
+                            <h2 className="title">Primeiro aniversário do Paulo junto da Bia</h2>
                             <div className="content">
-                                <img src="https://ununsplash.imgix.net/photo-1421284621639-884f4129b61d?fit=crop&fm=jpg&h=700&q=75&w=1050"
-                                alt = "" /> 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore vitae sint dolore, officia esse! A recusandae nemo illum rem eos iusto repellendus,voluptatibus tempora nulla voluptatem officia inventore ea modi.</p> 
+                                <img
+                                    src={require('../../dist/Assets/timeline_images/20120817.jpg')}
+                                    alt=""/>
+                                <p>O primeiro aniversário juntos sempre é muito especial!</p>
                             </div>
                         </section>
+                        <section className="card-single active" period="period2012">
+                            <h4 className="year">16/09/2012</h4>
+                            <h2 className="title">Onde um vai, o outro vai atrás</h2>
+                            <div className="content">
+                                <img
+                                    src={require('../../dist/Assets/timeline_images/20120916.jpg')}
+                                    alt=""/>
+                                <p>Quase completando um ano de namoro, sempre estavam juntos em todas as festas... e cada festa uma sessão de fotos mais maluca que a outra</p>
+                            </div>
+                        </section>
+                        <section className="card-single active" period="period2013">
+                            <h4 className="year">13/05/2013</h4>
+                            <h2 className="title">Crescendo juntos</h2>
+                            <div className="content">
+                                <img
+                                    src={require('../../dist/Assets/timeline_images/20130513.jpg')}
+                                    alt=""/>
+                                <p>Do começo do ensino médio até Paulo tirar a carteira... os dois davam muitos passos importantes juntos</p>
+                            </div>
+                        </section>
+                        <section className="card-single active" period="period2013">
+                            <h4 className="year">30/05/2013</h4>
+                            <h2 className="title">E começam a viajar</h2>
+                            <div className="content">
+                                <img
+                                    src={require('../../dist/Assets/timeline_images/20130530.jpg')}
+                                    alt=""/>
+                                <p>Um casal que ama viajar, sempre dando um jeito de irem juntos não importa o destino</p>
+                            </div>
+                        </section>
+                        <section className="card-single active" period="period2013">
+                            <h4 className="year">03/08/2013</h4>
+                            <h2 className="title">Do ensino médio à Universidade</h2>
+                            <div className="content">
+                                <img
+                                    src={require('../../dist/Assets/timeline_images/20130803.jpg')}
+                                    alt=""/>
+                                <p>Aprovação em Ciência da Computação, tem que ter trote!</p>
+                            </div>
+                        </section>
+                        <section className="card-single active" period="period2013">
+                            <h4 className="year">03/08/2013</h4>
+                            <h2 className="title">Mesmo sem cabelo o amor continua!</h2>
+                            <div className="content">
+                                <img
+                                    src={require('../../dist/Assets/timeline_images/20130803_2.jpg')}
+                                    alt=""/>
+                                <p>Não importa a aparência ou fase da vida, e mesmo com a careca iluminada, Bia ainda ama Paulo</p>
+                            </div>
+                        </section>
+                        <section className="card-single active" period="period2014">
+                            <h4 className="year">07/02/2014</h4>
+                            <h2 className="title">E sempre com responsabilidade</h2>
+                            <div className="content">
+                                <img
+                                    src={require('../../dist/Assets/timeline_images/20140207.jpg')}
+                                    alt=""/>
+                                <p>Casal sobrio, gangue do toddynho</p>
+                            </div>
+                        </section>
+                        <section className="card-single active" period="period2014">
+                            <h4 className="year">02/11/2014</h4>
+                            <h2 className="title">E mais responsabilidade</h2>
+                            <div className="content">
+                                <img
+                                    src={require('../../dist/Assets/timeline_images/20141102.jpg')}
+                                    alt=""/>
+                                <p>O copo de acrílico contém água</p>
+                            </div>
+                        </section>
+                        
                     </div>
                 </div>
             </div>

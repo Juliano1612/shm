@@ -39,7 +39,11 @@ class HomePage extends Component {
       updateClock();
       var timeinterval = setInterval(updateClock, 1000);
     }
-    var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+
+    // var date = Math.abs(new Date(2019, 06, 22, 18, 0, 0) - new Date())
+
+    var deadline = new Date(2019, 5, 22, 18, 0, 0);
+    // console.log(deadline)
 
     initializeClock('clockdiv', deadline);
   }

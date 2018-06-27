@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Dropzone from 'react-dropzone';
 import axios from 'axios';
-import database from '../firebase/firebase'
+import database from '../firebase/firebase';
 
 class Feed extends Component {
 
@@ -11,7 +11,6 @@ class Feed extends Component {
       files: [],
       selectedFile: null
     }
-    
   }
 
   handleLikes(s, f){
@@ -32,10 +31,13 @@ class Feed extends Component {
     console.log(this.state.files)
   }
 
+ 
+
   fileSelectHandler (file){
     console.log(file)
     this.state.selectedFile = file[0]
-    this.fileUploadHandler()
+
+    // this.fileUploadHandler()
   }
 
   onDrop(files) {
@@ -44,6 +46,9 @@ class Feed extends Component {
     //   tag.remove()
     // }
     this.fileSelectHandler(files)
+    document.getElementById("hidePreviewCard").hidden = !document.getElementById("hidePreviewCard").hidden
+    document.getElementById("dropZone").hidden = !document.getElementById("dropZone").hidden
+    document.getElementById("previewImage").src = this.state.selectedFile.preview 
     // this.setState({files});
   }
 
@@ -58,7 +63,10 @@ class Feed extends Component {
       .then(res => { 
         database.ref('images').push({
           url: res.data.message,
-          likes: 0
+          likes: 0,
+          submiter: document.getElementById("previewSubmiter").value,
+          title: document.getElementById("previewTitle").value,
+          description: document.getElementById("previewTextArea").value
         }).then(() => {
             console.log('Data is saved!');
             this.fileDownloadHandler()
@@ -66,6 +74,17 @@ class Feed extends Component {
             console.log('Failed.', e);
         });
       }) 
+  }
+
+  handleCancelButton() {
+    document.getElementById("hidePreviewCard").hidden = !document.getElementById("hidePreviewCard").hidden
+    document.getElementById("dropZone").hidden = !document.getElementById("dropZone").hidden
+  }
+
+  handleUploadButton(){
+    document.getElementById("hidePreviewCard").hidden = !document.getElementById("hidePreviewCard").hidden
+    document.getElementById("dropZone").hidden = !document.getElementById("dropZone").hidden
+    this.fileUploadHandler()
   }
 
   snapshotToArray(snapshot) {
@@ -95,7 +114,10 @@ class Feed extends Component {
           var img = {
             key: imgArray[i].key,
             url: imgArray[i].url,
-            likes: imgArray[i].likes
+            likes: imgArray[i].likes,
+            title: imgArray[i].title,
+            submiter: imgArray[i].submiter,
+            description: imgArray[i].description
           }
           this.setState(prevState => ({
             files: [...prevState.files, img]
@@ -113,9 +135,11 @@ class Feed extends Component {
 
   render() {
     return (
-      <div className="ui center aligned grid">
+      <div className="ui container">
+        <div className="ui center aligned grid">
         <div className="ui row">
           <Dropzone
+              id="dropZone"
               className="dragdrop"
               onDrop={this.onDrop.bind(this)}>
               <div className="ui two column grid middle aligned centered " id="iconUpload">
@@ -129,15 +153,34 @@ class Feed extends Component {
                   <h3 align="left">Arraste uma imagem ou clique para enviar</h3>
                 </div>
               </div>
-              {/* <div>
-                <ul className="padZero">
-                  {
-                    // this.state.files.map(f =>{<img width="70%" height="auto" src={f.preview}> </img>})
-                    // this.state.files.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
-                  }
-                </ul>
-              </div> */}
+              
           </Dropzone>
+          <div id="hidePreviewCard" hidden>
+          
+          <div id="previewCard" class="ui card">
+                <div class="image">
+                  <img id="previewImage" src={this.state.selectedFile}></img>
+                </div>
+                <div class="content center aligned" >
+                  <div className="ui form ">
+                    <div className="ui fluid input field">
+                      <input id="previewSubmiter" placeholder="Digite seu nome" type="text"/>
+                    </div>
+                    <div className="ui fluid input field">
+                      <input id="previewTitle" placeholder="Digite um título" type="text"/>
+                    </div>
+                    <div class="ui fluid input field">
+                      <textarea id="previewTextArea" rows="2" placeholder="Digite uma descrição"></textarea>
+                    </div>
+                  </div>
+                  
+                </div>
+                <div class="extra content fluid center aligned">
+                  <button className="ui red button left aligned" onClick={this.handleCancelButton.bind(this)}>Cancelar</button>
+                  <button className="ui green button right aligned" onClick={this.handleUploadButton.bind(this)}>Salvar</button>
+                </div>
+              </div>
+              </div>
         </div>
         <div className="ui row">
           <div className="ui four cards">
@@ -147,16 +190,16 @@ class Feed extends Component {
                 <div class="image">
                   <img src={f.url}/>
                 </div>
-                <div class="content">
-                  <a class="header">Kristy</a>
+                <div class="content center aligned">
+                  <a class="header">{f.title}</a>
                   <div class="meta">
-                    <span class="date">Joined in 2013</span>
+                    <span class="date">Enviado por {f.submiter}</span>
                   </div>
                   <div class="description">
-                    Kristy is an art director living in New York.
+                    {f.description}
                   </div>
                 </div>
-                <div class="extra content">
+                <div class="extra content center aligned">
                   <a>
                     <i class="heart outline like icon" ></i>
                     {f.likes} Likes
@@ -166,7 +209,9 @@ class Feed extends Component {
           })}
         </div>
       </div> 
-    </div>  
+    </div>
+      </div>
+        
     )
   }
 }
