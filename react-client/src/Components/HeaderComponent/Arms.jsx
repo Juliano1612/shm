@@ -4,7 +4,7 @@ class Arms extends Component {
   render() {
     return (
       <div className="ui container center aligned">
-        <img src="/Assets/arms.jpg"
+        <img src="/Assets/arms.png"
              width="150"
              heigh="150"
              /> 
