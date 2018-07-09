@@ -1,2 +1,2 @@
-sudo npm install -g nodemon
-sudo npm install -g firebase-tools
+npm install
+npm install nodemon
